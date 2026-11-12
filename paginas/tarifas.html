@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuedaLibre | Tarifas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css"> <!-- CSS complemento de Bootstrap -->
+    <meta name="description" content="Mira nuestras tarifas de alquiler de bicicletas y de nuestros recorridos.">
+</head>
+
+<body>
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark" aria-label="Navegación principal">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="../img/Logo.png" alt="Logo de Rueda Libre" class="logo-img"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1" aria-hidden="true"></i>Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#Nosotros"><i class="bi bi-people me-1" aria-hidden="true"></i>Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#Servicios"><i class="bi bi-tools me-1" aria-hidden="true"></i>Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#Encuentranos"><i class="bi bi-geo-alt me-1" aria-hidden="true"></i>Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="./tarifas.html"><i class="bi bi-cash-coin me-1" aria-hidden="true"></i>Tarifas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./reservas.html"><i class="bi bi-calendar-check me-1" aria-hidden="true"></i>Reservas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-xl my-4 px-3">
+        <div class="row g-4">
+
+            <div class="col-12 col-lg-8 d-flex flex-column gap-4">
+                <section class="card bg-white">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="table-responsive container-tabla">
+                            <table class="tabla tarifas-alquiler w-100 mb-0" id="tarifas-alquiler">
+                                <caption>Tarifas de Alquiler</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Tipo Bicicleta</th>
+                                        <th scope="col">1 Hora</th>
+                                        <th scope="col">Medio día(4 H)</th>
+                                        <th scope="col">Día Completo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Urbana</td>
+                                        <td>$10.000</td>
+                                        <td>$30.000</td>
+                                        <td>$50.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Montaña</td>
+                                        <td>$15.000</td>
+                                        <td>$45.000</td>
+                                        <td>$70.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Eléctrica</td>
+                                        <td>$25.000</td>
+                                        <td>$70.000</td>
+                                        <td>$110.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card bg-white">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="table-responsive container-tabla">
+                            <table class="tabla tarifas-recorrido w-100 mb-0" id="tarifas-recorridos">
+                                <caption>Tarifas de Rutas Guiadas</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Recorrido</th>
+                                        <th>Distancia</th>
+                                        <th>Duración</th>
+                                        <th>Nivel</th>
+                                        <th>Precio por Persona</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Río y Parques</td>
+                                        <td>12 km</td>
+                                        <td>2 h</td>
+                                        <td>Fácil</td>
+                                        <td>$45.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sabores de Barrio</td>
+                                        <td>18 km</td>
+                                        <td>3 h</td>
+                                        <td>Medio</td>
+                                        <td>$60.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reto Las Palmas</td>
+                                        <td>25 km</td>
+                                        <td>4 h</td>
+                                        <td>Difícil</td>
+                                        <td>$85.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <section class="card bg-white h-100 container-description">
+                    <div class="card-body p-3 p-md-4">
+                        <p>Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y
+                            domingos a las 7:00 a. m. <br><strong>Qué llevar:</strong></p>
+
+                        <aside>
+                            <ul>
+                                <li>Ropa cómoda</li>
+                                <li>Agua</li>
+                                <li>Protector Solar</li>
+                                <li>Documento Identidad</li>
+                            </ul>
+                        </aside>
+
+                        <a href="reservas.html" class="btn btn-primary btn-lg">Reserva ahora</a>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+        <aside class="whatsapp">
+            <a href="whatsapp://send?phone=573001234567" target="_blank" class="btn btn-primary btn-whatsapp" aria-label="Escríbenos por WhatsApp">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                <p>Escríbenos!</p>
+            </a>
+        </aside>
+
+    </main>
+
+    <footer id="footer">
+        Rueda Libre | hola@ruedalibre.example | 2026
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
