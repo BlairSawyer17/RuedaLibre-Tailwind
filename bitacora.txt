@@ -545,3 +545,43 @@ COMPROBACIÓN DE CAMPOS CON SCRIPT DE BOOTSTRAP:
     Para mi estilo de hacer las cosas, implementar bootstrap puede ser más tedioso ya que es un poco limitante en el control y yo prefiero modificar todo por lo que no me parece tan rentable salvo por algunas cosas como los scripts que maneja para los modales, los carruseles, las validaciones, alertas y demás; pero para el estilo de la página en general, en lo personal, me parece mejor seguir solo con CSS.
 
     NOTA: No pude integrar las imágenes del antes y después de Rueda Libre de solo con Bootstrap y luego de Bootstrap con CSS porque mientras iba implementando Bootstrap iba cambiando las cosas en el CSS para adaptarlo al estilo de la versión 1.0.
+
+  PROTOTIPO "RUEDA NOCTURNA" CON TAILWIND (nocturna/prototipo.html)
+ 
+  El botón "Inscríbete", construido con Bootstrap y Tailwind:
+ 
+  +------------------+------------------------------------------------------------+------------------------------------------------------------+
+  | Comparativa      | Bootstrap (semana 2)                                       | Tailwind                                                   |
+  +------------------+------------------------------------------------------------+------------------------------------------------------------+
+  | Código en HTML   | <a href="..." class="btn btn-primary btn-lg">              | <a href="#" class="inline-block rounded-full bg-amber-400  |
+  |                  |                                                            | px-8 py-3 text-lg font-bold text-slate-950                 |
+  |                  |                                                            | hover:bg-amber-300 focus:bg-amber-300">                    |
+  +------------------+------------------------------------------------------------+------------------------------------------------------------+
+  | Esfuerzo         | El botón ya trae estados, bordes y tamaños; per5o hay que  | Hay que elegir cada utilidad (y sus estados hover y focus) |
+  |                  | aprender los nombres y variables y también límita el diseño| para armar la apariencia, aunque no se escribe CSS aparte. |
+  +------------------+------------------------------------------------------------+------------------------------------------------------------+
+
+  TAILWIND CON LA CLI (nocturna/)
+ 
+  Montaje:
+    npm init -y
+    npm install tailwindcss @tailwindcss/cli 
+    src/input.css  ->  @import "tailwindcss";
+    .gitignore     ->  node_modules/
+    cd nocturna
+    npm run dev    ->  tailwindcss -i ./src/input.css -o ./src/output.css --watch
+ 
+  Qué encontré en src/output.css:
+ 
+    - Clase que SÍ uso: bg-amber-400. Aparece como regla:
+        .bg-amber-400 { background-color: var(--color-amber-400); }
+      y en la capa de tema está la variable --color-amber-400: oklch(82.8% 0.189 84.429).
+    - Clase que NO uso: bg-pink-500. No aparece: 0 coincidencias de "bg-pink-500" ni de "pink" en todo el archivo
+      (tampoco la variable --color-pink-500).
+ 
+  Por qué ocurre:
+    Tailwind no trae una hoja gigante con todas las clases. Al ejecutarse, la CLI lee los archivos del proyecto
+    (index.html, prototipo.html...), busca los nombres de clase que están escritos en ellos y genera solo las reglas
+    de esas clases, con solo las variables de color que esas reglas necesitan. Como bg-pink-500 no está escrita en
+    ningún archivo, no se genera. El archivo es pequeño y contiene solo lo que usa la página.
+ 
