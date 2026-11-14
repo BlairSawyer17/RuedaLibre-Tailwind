@@ -585,3 +585,61 @@ COMPROBACIÓN DE CAMPOS CON SCRIPT DE BOOTSTRAP:
     de esas clases, con solo las variables de color que esas reglas necesitan. Como bg-pink-500 no está escrita en
     ningún archivo, no se genera. El archivo es pequeño y contiene solo lo que usa la página.
  
+KIT DE COMPONENTES (nocturna/componentes.html)
+ 
+  URL de GitHub Pages: https://blairsawyer17.github.io/RuedaLibre/nocturna/componentes.html
+  (la página enlaza ./src/output.css, que está en el repositorio, así que no hay 404 si se sube src/output.css)
+ 
+  Componentes: botón (principal, secundario, contorno), card, alerta (información, éxito, advertencia) y campo
+  (correo y celular).
+ 
+  REGLAS DEL KIT
+ 
+  1. Radios de borde (tres, cada uno con un rol):
+       rounded-full  -> acciones y etiquetas (botones, etiqueta de nivel)
+       rounded-2xl   -> la card
+       rounded-xl    -> controles y avisos (inputs, alertas, cajas de dato)
+ 
+  2. Escala de espaciado (solo estos valores de Tailwind: 1, 3, 4, 6, 8 y 16):
+       1  (4 px)   etiqueta -> campo -> ayuda; título -> texto de la alerta
+       3  (12 px)  px/py de la etiqueta de nivel y del botón (py-3); líneas de la lista de datos
+       4  (16 px)  relleno de alertas y cajas (p-4), px de los inputs, separación entre campos/alertas/botones
+       6  (24 px)  relleno del cuerpo de la card (p-6)
+       8  (32 px)  px de los botones; separación entre bloques grandes
+       16 (64 px)  separación entre secciones de la página
+ 
+  3. Colores:
+       Fondo de página    bg-slate-950        Texto principal    text-white
+       Superficies        bg-slate-900        Texto secundario   text-slate-300 / text-slate-400
+       Bordes             border-slate-800 (superficies) y border-slate-700 (controles)
+       Acento (marca)     amber-400, hover amber-300, anillo de foco amber-200
+       Estados            información sky, éxito emerald, advertencia amber, difícil rose
+                          (etiqueta/borde en el tono 300-400 y fondo muy oscuro en 950, texto de título en 200)
+ 
+  4. Sombras:
+       shadow-md en superficies (card y alertas), hover:shadow-xl solo en la card, shadow-lg en botones;
+       los inputs no llevan sombra: se marcan con borde y anillo.
+ 
+  5. Tipografía:
+       Títulos font-bold text-white; etiqueta de campo text-sm font-semibold; ayuda text-sm text-slate-400;
+       nombre de dato text-xs uppercase tracking-wide text-slate-400; cuerpo text-slate-300 leading-relaxed.
+ 
+  6. Foco (igual en todo el kit): se quita el contorno del navegador (focus:outline-none) y se reemplaza por
+     focus:ring-4 con anillo claro (amber-200 en botones principal/contorno e inputs; slate-300 en el secundario).
+     Los inputs además cambian el borde a amber-400. Todo se puede recorrer con Tab.
+ 
+  Tabla de comparación (clases clave):
+    +-----------+-------------------+--------------+---------------------------+-------------+----------------------------------+
+    | Componente| Radio             | Relleno      | Colores                   | Sombra      | Foco                             |
+    +-----------+-------------------+--------------+---------------------------+-------------+----------------------------------+
+    | Botón     | rounded-full      | px-8 py-3    | amber-400 / slate-700 /   | shadow-lg   | ring-4 + ring-offset-2           |
+    |           |                   |              | borde amber-400           |             |                                  |
+    | Card      | rounded-2xl       | p-6 (cuerpo) | slate-900, borde slate-800| shadow-md   | (no es interactiva)              |
+    | Alerta    | rounded-xl        | p-4          | sky/emerald/amber 950-200 | shadow-md   | (no es interactiva)              |
+    | Input     | rounded-xl        | px-4 py-3    | slate-900, borde slate-700| (ninguna)   | ring-4 ring-amber-200 + borde    |
+    +-----------+-------------------+--------------+---------------------------+-------------+----------------------------------+
+ 
+  Accesibilidad:
+    - Las alertas de información y éxito llevan role="status" (aviso que se anuncia sin interrumpir); la de
+      advertencia lleva role="alert" (más urgente).
+    - Cada campo tiene <label for="..."> asociado al id del input, y su texto de ayuda se enlaza con aria-describedby.
