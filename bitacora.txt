@@ -643,3 +643,28 @@ KIT DE COMPONENTES (nocturna/componentes.html)
     - Las alertas de información y éxito llevan role="status" (aviso que se anuncia sin interrumpir); la de
       advertencia lleva role="alert" (más urgente).
     - Cada campo tiene <label for="..."> asociado al id del input, y su texto de ayuda se enlaza con aria-describedby.
+
+LAYOUT DE LA LANDING (nocturna/index.html)
+ 
+  Estructura: <header> (logo, enlaces y botón), <main> con cuatro <section> con id (inicio, rutas, como-funciona,
+  inscripcion) y <footer>. Las anclas del encabezado apuntan a #rutas, #como-funciona e #inscripcion; el logo a #inicio.
+ 
+  Contenedor común: todas las secciones, el encabezado y el pie usan la misma envoltura
+  "mx-auto max-w-6xl px-6" (centrada, ancho máximo y relleno lateral). El relleno vertical va en cada <section> (py-16).
+ 
+  Decisiones de layout:
+    -Encabezado: flex + items-center + justify-between (logo a un lado, botón al otro, enlaces en medio) y flex-wrap para que en pantallas pequeñas los enlaces pasen a una segunda fila (order-last + w-full) sin ocultarse.
+    -Rutas: grid de una columna y, desde lg, tres (lg:grid-cols-3) con gap-8. Con md (768 px) las cards quedaban demasiado angostas, por eso las tres columnas empiezan en lg.
+    - Pie: flex en columna y, desde md, en fila con justify-between: tres bloques (Marca, Contacto y Horario).
+    -Franja de inscripción: flex con items-center y justify-between (texto a la izquierda y botón a la derecha desde md).
+ 
+  "¿Cómo funciona?": usé GRID (grid sm:grid-cols-2 lg:grid-cols-4 gap-6) y no flex, por estas razones:
+    - Los cuatro pasos son iguales y deben tener el mismo ancho en cada columna. Con grid las columnas se reparten en partes iguales aunque el texto de un paso sea más largo; con flex el ancho depende del contenido.
+    -Hay que cambiar el número de columnas según el ancho (1, 2 y 4). Con grid es solo cambiar grid-cols-*; con flex habría que calcular anchos (basis) para que al saltar de línea no queden pasos desiguales.
+    - Con 4 pasos, en tablet se forma una cuadrícula de 2x2 ordenada, algo propio de una disposición en dos dimensiones. Flex habría sido más natural para una sola fila (como el encabezado o el pie), que es una dimensión.
+ 
+  Componentes: 
+  -Botón principal, card de ruta y caja de dato (rounded-xl bg-slate-900 p-4) tienen las mismas clases que en componentes.html. 
+  -Se añadieron solo clases de layout alrededor. Los enlaces del encabezado y del pie no son
+  componentes del kit; usan los mismos colores, radio (rounded-xl) y anillo de foco (focus:ring-4 ring-amber-200).
+  -Se quitó de index.html la sección "Botones", que ya está en componentes.html.
