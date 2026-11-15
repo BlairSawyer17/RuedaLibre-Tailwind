@@ -12,12 +12,12 @@
 <body class="bg-slate-950 text-white">
 
     <header class="border-b border-slate-800 py-4">
-        <div class="mx-auto max-w-6xl px-6 flex flex-wrap items-center justify-between gap-4">
+        <div class="mx-auto max-w-6xl px-6 flex flex-col items-center gap-4 md:flex-row md:justify-between">
             <a href="#inicio" class="rounded-xl focus:outline-none focus:ring-4 focus:ring-amber-200">
                 <img src="../img/Logo.png" alt="Rueda Libre, ir al inicio" class="h-12 w-auto">
             </a>
-            <nav aria-label="Secciones de la página" class="order-last w-full md:order-none md:w-auto">
-                <ul class="flex flex-wrap items-center gap-4">
+            <nav aria-label="Secciones de la página" class="hidden md:block">
+                <ul class="flex items-center gap-4 lg:gap-6">
                     <li><a href="#rutas"
                             class="rounded-xl px-3 py-1 font-semibold text-slate-300 hover:text-white focus:outline-none focus:ring-4 focus:ring-amber-200">Rutas</a>
                     </li>
@@ -36,22 +36,22 @@
 
     <main>
 
-        <section id="inicio" class="py-16" aria-labelledby="titulo-nocturna">
+        <section id="inicio" class="py-8 md:py-16" aria-labelledby="titulo-nocturna">
             <div class="mx-auto max-w-6xl px-6">
-                <div class="mx-auto max-w-3xl space-y-8 text-center">
+                <div class="mx-auto max-w-3xl space-y-6 text-center md:space-y-8">
                     <p
                         class="inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider bg-amber-400 text-slate-950">
                         Nuevo · Jueves a sábado</p>
                     <h1 id="titulo-nocturna"
-                        class="text-5xl font-extrabold leading-tight tracking-tight text-white md:text-7xl">Rueda
-                        Nocturna</h1>
-                    <p class="mx-auto max-w-xl text-lg leading-relaxed text-slate-300 md:text-xl">Descubre Medellín en
-                        bici cuando se encienden las luces</p>
+                        class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-7xl">
+                        Rueda Nocturna</h1>
+                    <p class="mx-auto max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg lg:text-xl">Descubre
+                        Medellín en bici cuando se encienden las luces</p>
                     <ul class="flex flex-wrap justify-center gap-4">
-                        <li class="w-56 rounded-xl bg-slate-900 p-4">
+                        <li class="w-full rounded-xl sm:w-56 bg-slate-900 p-4">
                             <p class="text-3xl font-bold text-amber-400">3 rutas</p>
                         </li>
-                        <li class="w-56 rounded-xl bg-slate-900 p-4">
+                        <li class="w-full rounded-xl sm:w-56 bg-slate-900 p-4">
                             <p class="text-3xl font-bold text-amber-400">Desde $55.000</p>
                         </li>
                     </ul>
@@ -62,14 +62,14 @@
             </div>
         </section>
 
-        <section id="rutas" class="py-16" aria-labelledby="titulo-rutas">
-            <div class="mx-auto max-w-6xl px-6 space-y-8">
+        <section id="rutas" class="py-8 md:py-16" aria-labelledby="titulo-rutas">
+            <div class="mx-auto max-w-6xl px-6 space-y-6 md:space-y-8">
                 <div class="mx-auto max-w-xl space-y-3 text-center">
-                    <h2 id="titulo-rutas" class="text-3xl font-bold text-white">Rutas</h2>
+                    <h2 id="titulo-rutas" class="text-2xl font-bold text-white md:text-3xl lg:text-4xl">Rutas</h2>
                     <p class="leading-relaxed text-slate-300">Todas salen de la sede de Rueda Libre e incluyen
                         bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
                 </div>
-                <div class="grid gap-8 lg:grid-cols-3">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                     <article
                         class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-md transition-shadow hover:border-amber-400 hover:shadow-xl hover:shadow-amber-400/20">
                         <img src="../img/rutaN1.jpg" alt="Ciclistas paseando por la ciudad"
@@ -161,10 +161,11 @@
             </div>
         </section>
 
-        <section id="como-funciona" class="py-16" aria-labelledby="titulo-como">
-            <div class="mx-auto max-w-6xl px-6 space-y-8">
-                <h2 id="titulo-como" class="text-3xl font-bold text-white text-center">¿Cómo funciona?</h2>
-                <ol class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <section id="como-funciona" class="py-8 md:py-16" aria-labelledby="titulo-como">
+            <div class="mx-auto max-w-6xl px-6 space-y-6 md:space-y-8">
+                <h2 id="titulo-como" class="text-2xl font-bold text-white md:text-3xl lg:text-4xl text-center">¿Cómo
+                    funciona?</h2>
+                <ol class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
                     <li class="rounded-xl bg-slate-900 p-4 space-y-3">
                         <span aria-hidden="true"
                             class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-400 text-xl font-bold text-slate-950">1</span>
@@ -196,22 +197,22 @@
             </div>
         </section>
 
-        <section id="inscripcion" class="bg-slate-900 py-16" aria-labelledby="titulo-inscripcion">
+        <section id="inscripcion" class="bg-slate-900 py-8 md:py-16" aria-labelledby="titulo-inscripcion">
             <div
                 class="mx-auto max-w-6xl px-6 flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
                 <div class="space-y-3">
-                    <h2 id="titulo-inscripcion" class="text-3xl font-bold text-white">Reserva tu cupo en Rueda Nocturna
-                    </h2>
+                    <h2 id="titulo-inscripcion" class="text-2xl font-bold text-white md:text-3xl lg:text-4xl">Reserva tu
+                        cupo en Rueda Nocturna</h2>
                     <p class="leading-relaxed text-slate-300">Jueves a sábado · Desde $55.000</p>
                 </div>
                 <a href="../paginas/reservas.html"
-                    class="inline-block cursor-pointer rounded-full border-2 px-8 py-3 text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-offset-slate-950 border-amber-400 bg-transparent text-amber-400 hover:bg-amber-400 hover:text-slate-950 focus:ring-amber-200">Inscríbete</a>
+                    class="inline-block cursor-pointer rounded-full border-2 px-8 py-3 text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-offset-slate-950 border-transparent bg-amber-400 text-slate-950 hover:bg-amber-300 focus:ring-amber-200">Inscríbete</a>
             </div>
         </section>
 
     </main>
 
-    <footer class="border-t border-slate-800 py-16">
+    <footer class="border-t border-slate-800 py-8 md:py-16">
         <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8 md:flex-row md:justify-between">
             <div class="space-y-3">
                 <h2 class="text-xs uppercase tracking-wide text-slate-400">Marca</h2>
