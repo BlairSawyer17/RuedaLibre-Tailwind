@@ -709,7 +709,7 @@ LANDING MOBILE-FIRST (nocturna/index.html)
 
 FORMULARIO DE INSCRIPCIÓN EN 40 MINUTOS (nocturna/index.html, sección #inscripcion)
  
-  Tiempo real: 30 min de los 40 previstos.
+  Tiempo real: 33 min de los 40 previstos.
   Qué quedó pendiente: El formulario no guarda los datos porque no hay servidor.
  
   Controles elegidos (todos required, cada uno con <label for> o <legend>):
@@ -748,3 +748,41 @@ FORMULARIO DE INSCRIPCIÓN EN 40 MINUTOS (nocturna/index.html, sección #inscrip
     | 10 | Solo teclado (Tab, flechas,     | Se completa y se envía; el foco se ve    | Esperado  |
     |    | espacio, Enter)                 | en claro y oscuro                        |           |
     +----+---------------------------------+------------------------------------------+-----------+
+
+
+INTEGRACIÓN BOOTSTRAP + TAILWIND (sitio v2.0 y nocturna/)
+ 
+  Tiempo real: 46 min de los 40 previstos.
+ 
+  Rutas relativas (raíz del repositorio = sitio Bootstrap):
+    +---------------------------+------------------------------+------------------------------+
+    | Archivo de origen         | Destino                      | Ruta escrita                 |
+    +---------------------------+------------------------------+------------------------------+
+    | index.html (raíz)         | nocturna/index.html          | ./nocturna/index.html        |
+    | paginas/tarifas.html      | nocturna/index.html          | ../nocturna/index.html       |
+    | paginas/reservas.html     | nocturna/index.html          | ../nocturna/index.html       |
+    | nocturna/index.html       | index.html (logo y pie)      | ../index.html                |
+    | nocturna/index.html       | paginas/reservas.html        | ../paginas/reservas.html     |
+    | nocturna/index.html       | img/Logo.png, img/rutaN*.jpg | ../img/...                   |
+    | nocturna/index.html       | src/output.css               | ./src/output.css             |
+    +---------------------------+------------------------------+------------------------------+
+ 
+  Marca compartida (Bootstrap :root  vs  Tailwind @theme):
+    verde-ruta #1e7a4f | naranja-pedal #f39a2b | azul-noche #14213d | crema #faf6ef | gris-asfalto #5b6470
+    amarillo-farol #ffd166 (color nuevo de la campaña)
+    Fuentes: Montserrat (títulos) y Open Sans (texto) en ambos.
+    Pie: mismo correo, mismo horario y mismo nombre de marca. [completar con lo que se unificó]
+ 
+  Verificación de enlaces (local en 127.0.0.1:5500 y GitHub Pages https://blairsawyer17.github.io/RuedaLibre-Tailwind/):
+
+    +----+-----------------------------------------+--------------------------------------------+----------------------------------------------------------------------------+
+    | N° | Enlace                                  | Local                                      | GitHub Pages                                                               |
+    +----+-----------------------------------------+--------------------------------------------+----------------------------------------------------------------------------+
+    | 01 | Navbar index -> landing                 | http://127.0.0.1:5500/index.html           | https://blairsawyer17.github.io/RuedaLibre-Tailwind/index.html             |
+    | 02 | Navbar tarifas -> landing               | http://127.0.0.1:5500/paginas/tarifas.html | https://blairsawyer17.github.io/RuedaLibre-Tailwind/paginas/tarifas.html   |
+    | 03 | Navbar reservas -> landing              | http://127.0.0.1:5500/paginas/reservas.html| https://blairsawyer17.github.io/RuedaLibre-Tailwind/paginas/reservas.html  |
+    | 04 | Logo de la landing -> index             | http://127.0.0.1:5500/index.html           | https://blairsawyer17.github.io/RuedaLibre-Tailwind/index.html             |
+    | 05 | Botón "Reserva tu bici" -> reservas     | http://127.0.0.1:5500/paginas/reservas.html| https://blairsawyer17.github.io/RuedaLibre-Tailwind/paginas/reservas.html  |
+    | 06 | Pie de la landing -> index y reservas   | http://127.0.0.1:5500/index.html           | https://blairsawyer17.github.io/RuedaLibre-Tailwind/index.html             |
+    |    |                                         | http://127.0.0.1:5500/paginas/reservas.html| https://blairsawyer17.github.io/RuedaLibre-Tailwind/paginas/reservas.html  |
+    +----+-----------------------------------------+--------------------------------------------+----------------------------------------------------------------------------+
