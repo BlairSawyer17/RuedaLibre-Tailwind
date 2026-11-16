@@ -1,6 +1,11 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 
-@import "tailwindcss";
+/* Solo se leen las páginas de nocturna (así funciona aunque Tailwind esté instalado en la carpeta de arriba) */
+@source "../index.html";
+@source "../componentes.html";
+
+/* Modo oscuro sin JavaScript: se activa cuando el checkbox #tema está marcado */
+@custom-variant dark (&:where(:root:has(#tema:checked) *));
 
 @theme {
   /* Solo colores de la marca (y blanco/negro): se desactiva la paleta genérica de Tailwind */
@@ -13,8 +18,24 @@
   --color-azul-noche: #14213d;
   --color-crema: #faf6ef;
   --color-gris-asfalto: #5b6470;
-  --color-amarillo-farol: #ffd166; /* color nuevo de la campaña */
+  --color-amarillo-farol: #ffd166;
+  /* color nuevo de la campaña */
 
   --font-titulos: "Montserrat", sans-serif;
   --font-texto: "Open Sans", sans-serif;
+}
+
+/* Botones: tres clases de componente (el resto del kit se compone con utilidades en el HTML) */
+@layer components {
+  .btn-principal {
+    @apply inline-block cursor-pointer rounded-full border-2 px-8 py-3 font-titulos text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche border-transparent bg-verde-ruta text-white hover:bg-naranja-pedal hover:text-azul-noche dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal;
+  }
+
+  .btn-secundario {
+    @apply inline-block cursor-pointer rounded-full border-2 px-8 py-3 font-titulos text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche border-transparent bg-azul-noche text-white hover:bg-gris-asfalto dark:bg-white/10 dark:text-crema dark:hover:bg-white/20;
+  }
+
+  .btn-contorno {
+    @apply inline-block cursor-pointer rounded-full border-2 px-8 py-3 font-titulos text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche border-verde-ruta bg-transparent text-verde-ruta hover:bg-verde-ruta hover:text-white dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche;
+  }
 }
