@@ -32,10 +32,10 @@
   }
 
   .btn-secundario {
-    @apply inline-block cursor-pointer rounded-full border-2 px-8 py-3 font-titulos text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche border-transparent bg-azul-noche text-white hover:bg-gris-asfalto dark:bg-white/10 dark:text-crema dark:hover:bg-white/20;
+    @apply inline-block cursor-pointer rounded-full border-2 px-8 py-3 font-titulos text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche border-transparent bg-amarillo-farol text-black hover:bg-naranja-pedal dark:bg-white/10 dark:text-crema dark:hover:bg-white/20;
   }
 
   .btn-contorno {
-    @apply inline-block cursor-pointer rounded-full border-2 px-8 py-3 font-titulos text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche border-verde-ruta bg-transparent text-verde-ruta hover:bg-verde-ruta hover:text-white dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche;
+    @apply inline-block cursor-pointer rounded-full border-2 px-8 py-3 font-titulos text-lg font-bold shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche border-white bg-transparent text-white hover:bg-amarillo-farol hover:text-black hover:border-transparent dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche;
   }
 }
