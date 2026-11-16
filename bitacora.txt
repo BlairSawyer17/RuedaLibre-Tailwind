@@ -695,13 +695,56 @@ LANDING MOBILE-FIRST (nocturna/index.html)
      +--------+--------------------------------------------------------------------------+-----------+
      | Ancho  | Esperado                                                                 | Obtenido  |
      +--------+--------------------------------------------------------------------------+-----------+
-     | 360    | Una columna en todo. Encabezado apilado (logo y botón), sin enlaces.     | [completar]|
+     | 360    | Una columna en todo. Encabezado apilado (logo y botón), sin enlaces.     | Esperado  |
      |        | h1 text-4xl, py-8. Sin scroll horizontal.                                |           |
      +--------+--------------------------------------------------------------------------+-----------+
-     | 768    | Rutas en 2 columnas (la tercera queda sola en la segunda fila). Pasos en | [completar]|
+     | 768    | Rutas en 2 columnas (la tercera queda sola en la segunda fila). Pasos en | Esperado  |
      |        | 2 columnas. Encabezado en fila con enlaces visibles. h1 text-5xl, py-16. |           |
      +--------+--------------------------------------------------------------------------+-----------+
-     | 1024   | Rutas en 3 columnas. Pasos en 4 columnas. h1 text-7xl. Pie en fila.      | [completar]|
+     | 1024   | Rutas en 3 columnas. Pasos en 4 columnas. h1 text-7xl. Pie en fila.      | Esperado  |
      +--------+--------------------------------------------------------------------------+-----------+
-     | 1280   | Igual que 1024, con el contenido centrado en max-w-6xl (1152 px).        | [completar]|
+     | 1280   | Igual que 1024, con el contenido centrado en max-w-6xl (1152 px).        | Esperado  |
      +--------+--------------------------------------------------------------------------+-----------+
+
+
+FORMULARIO DE INSCRIPCIÓN EN 40 MINUTOS (nocturna/index.html, sección #inscripcion)
+ 
+  Tiempo real: 30 min de los 40 previstos.
+  Qué quedó pendiente: El formulario no guarda los datos porque no hay servidor.
+ 
+  Controles elegidos (todos required, cada uno con <label for> o <legend>):
+    +--------------------+-------------------------------+------------------------------------------------------+
+    | Dato               | Control                       | Regla                                                |
+    +--------------------+-------------------------------+------------------------------------------------------+
+    | Nombre completo    | input type="text"             | minlength="3"                                        |
+    | Correo             | input type="email"            | pattern [^@\s]+@[^@\s]+\.[^@\s]+ (exige punto en el  |
+    |                    |                               | dominio; type="email" solo no lo exigía)             |
+    | Celular            | input type="tel"              | pattern="3[0-9]{9}" + maxlength="10" + title         |
+    | Ruta               | select (3 opciones)           | la opción vacía hace que required falle              |
+    | Día de salida      | select (jueves a sábado)      | igual que la ruta                                    |
+    | Acompañantes       | input type="number"           | min="0" max="3" step="1"                             |
+    | Nivel              | 3 radios en fieldset/legend   | required: se debe elegir uno                         |
+    | Bicicleta propia   | 2 radios (Sí / No)            | required: se debe elegir uno                         |
+    | Condiciones        | input type="checkbox"         | required                                             |
+    +--------------------+-------------------------------+------------------------------------------------------+
+ 
+  Estructura: <form> con cuatro <fieldset> con <legend> (Tus datos, Tu salida, Tu experiencia, Confirmación).
+  Campos cortos en dos columnas desde md (grid grid-cols-1 md:grid-cols-2). Modo oscuro con dark:.
+  Al enviar, el formulario va a #confirmacion y el aviso verde (hidden target:block) se muestra solo con CSS.
+ 
+  Pruebas (completar "Obtenido" al probar en el navegador):
+    +----+---------------------------------+------------------------------------------+-----------+
+    | N° | Prueba                          | Esperado                                 | Obtenido  |
+    +----+---------------------------------+------------------------------------------+-----------+
+    | 01 | Formulario vacío                | No envía; avisa el primer campo faltante | Esperado  |
+    | 02 | Nombre "Al"                     | No envía (mínimo 3 caracteres)           | Esperado  |
+    | 03 | Correo "ana@dominio"            | No envía (falta extensión)               | Esperado  |
+    | 04 | Celular "2001234567"            | No envía (debe empezar por 3)            | Esperado  |
+    | 05 | Celular "300123456"             | No envía (deben ser 10 dígitos)          | Esperado  |
+    | 06 | Acompañantes 4 y -1             | No envía (rango 0 a 3)                   | Esperado  |
+    | 07 | Sin elegir nivel o bicicleta    | No envía                                 | Esperado  |
+    | 08 | Sin marcar condiciones          | No envía                                 | Esperado  |
+    | 09 | Todo correcto                   | Envía y muestra "Inscripción recibida"   | Esperado  |
+    | 10 | Solo teclado (Tab, flechas,     | Se completa y se envía; el foco se ve    | Esperado  |
+    |    | espacio, Enter)                 | en claro y oscuro                        |           |
+    +----+---------------------------------+------------------------------------------+-----------+
